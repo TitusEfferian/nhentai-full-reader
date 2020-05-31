@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Loader from './components/Loader';
+import ImageContainer from './components/ImageContainer';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -10,11 +11,9 @@ function App() {
    */
   const IO = useRef(new IntersectionObserver((entry) => {
     entry.forEach(entries => {
+      console.log(entries)
       if (entries.isIntersecting) {
-        entries.target.setAttribute('src', entries.target.getAttribute('loader'));
-        entries.target.onload = () => {
-          entries.target.style.height = '';
-        }
+        entries.target.firstChild.setAttribute('src', entries.target.firstChild.getAttribute('loader'));
       }
     })
   }, { root: null, rootMargin: '0px', threshold: [0.25, 0.5, 1.0] }));
@@ -64,10 +63,18 @@ function App() {
   }
   return arrayOfImage.map(x => {
     return (
-      // eslint-disable-next-line jsx-a11y/alt-text
-      <img ref={ref => imgElement.current.push(ref)} style={{ width: '100%', height: '85vh',backgroundColor:'grey' }} src={`https://nhentai-bypass-original-uu6sxpl27a-de.a.run.app?source=${x.preview}`} loader={`https://nhentai-bypass-original-uu6sxpl27a-de.a.run.app?source=${x.original}`} />
+      <ImageContainer imgElement={imgElement}>
+        <img style={styles.imgStyles} alt="img" src={`https://nhentai-bypass-original-uu6sxpl27a-de.a.run.app?source=${x.preview}`} loader={`https://nhentai-bypass-original-uu6sxpl27a-de.a.run.app?source=${x.original}`} />
+      </ImageContainer>
     )
   })
+}
+
+const styles = {
+  imgStyles: {
+    width: '100%',
+    height: 'auto',
+  }
 }
 
 export default App;
