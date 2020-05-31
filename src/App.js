@@ -64,6 +64,7 @@ function App() {
   }
   return arrayOfImage.map(x => {
     return (
+      // eslint-disable-next-line jsx-a11y/alt-text
       <img ref={ref => imgElement.current.push(ref)} style={{ width: '100%', height: '85vh',backgroundColor:'grey' }} src={`https://nhentai-bypass-original-uu6sxpl27a-de.a.run.app?source=${x.preview}`} loader={`https://nhentai-bypass-original-uu6sxpl27a-de.a.run.app?source=${x.original}`} />
     )
   })
