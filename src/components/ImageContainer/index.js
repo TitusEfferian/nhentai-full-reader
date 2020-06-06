@@ -14,7 +14,8 @@ const styles = {
         height: '85vh',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        position: 'relative',
     },
 }
 
