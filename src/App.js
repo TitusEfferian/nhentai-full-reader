@@ -34,7 +34,7 @@ function App() {
     (async () => {
       const urlParams = new URLSearchParams(window.location.search);
       const source = urlParams.get('source');
-      const fetchResult = await fetch(`https://asia-east2-fleet-range-273715.cloudfunctions.net/nhentai-crawler?nhentaiId=${source}`);
+      const fetchResult = await fetch(`https://nhentai-crawler-uu6sxpl27a-de.a.run.app/source/${source}`);
       const { success, arrayOfImage: image } = await fetchResult.json();
       if (success) {
         setLoading(false);
