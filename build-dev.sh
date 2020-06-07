@@ -1,0 +1,1 @@
+git fetch && git rebase origin/development && gcloud builds submit --tag gcr.io/fleet-range-273715/nhentai-full-reader-development
