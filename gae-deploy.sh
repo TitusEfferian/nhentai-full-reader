@@ -1,0 +1,1 @@
+yarn build && cd gae-engine/ && gcloud app deploy
