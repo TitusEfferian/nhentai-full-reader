@@ -34,7 +34,7 @@ function App() {
     (async () => {
       const urlParams = new URLSearchParams(window.location.search);
       const source = urlParams.get('source');
-      const fetchResult = await fetch(`https://nhentai-crawler-uu6sxpl27a-de.a.run.app/source/${source}`);
+      const fetchResult = await fetch(`https://nhentai-crawler-dot-nhentai-unofficial.et.r.appspot.com/source/${source}`);
       const { success, arrayOfImage: image } = await fetchResult.json();
       if (success) {
         setLoading(false);
