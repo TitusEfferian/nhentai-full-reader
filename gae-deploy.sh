@@ -1,1 +1,1 @@
-git fetch && git rebase origin/gae-master && yarn build && mv build/ gae-engine/ && cd gae-engine/ && gcloud app deploy
+git fetch && git rebase origin/gae-master && yarn build && gcloud app deploy
