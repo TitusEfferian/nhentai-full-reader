@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import Loader from './components/Loader';
 import ImageContainer from './components/ImageContainer';
 import ImageLoader from './components/ImageLoader';
+import { nhentaiCrawler, nhentaiByPass } from './endpoints';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -34,7 +35,7 @@ function App() {
     (async () => {
       const urlParams = new URLSearchParams(window.location.search);
       const source = urlParams.get('source');
-      const fetchResult = await fetch(`https://nhentai-crawler-dot-nhentai-unofficial.et.r.appspot.com/source/${source}`);
+      const fetchResult = await fetch(`${nhentaiCrawler}${source}`);
       const { success, arrayOfImage: image } = await fetchResult.json();
       if (success) {
         setLoading(false);
@@ -72,13 +73,13 @@ function App() {
     if(y<5) {
       return (
         <ImageContainer imgElement={imgElement}>
-          <img style={styles.imgStyles} alt="img" src={`https://nhentai-bypass-original-uu6sxpl27a-de.a.run.app?source=${x.preview}`} loader={`https://nhentai-bypass-original-uu6sxpl27a-de.a.run.app?source=${x.original}`} />
+          <img style={styles.imgStyles} alt="img" src={`${nhentaiByPass}${x.preview}`} loader={`${nhentaiByPass}${x.original}`} />
         </ImageContainer>
       )
     }
     return (
       <ImageContainer imgElement={imgElement}>
-        <img style={styles.imgStyleLazy} loader={`https://nhentai-bypass-original-uu6sxpl27a-de.a.run.app?source=${x.original}`} />
+        <img style={styles.imgStyleLazy} loader={`${nhentaiByPass}${x.original}`} />
         <ImageLoader />
       </ImageContainer>
     )
