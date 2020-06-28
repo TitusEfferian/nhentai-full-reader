@@ -1,2 +1,2 @@
-export const nhentaiCrawler = `https://nhentai-crawler-dot-nhentai-unofficial.et.r.appspot.com/source/`;
-export const nhentaiByPass = `http://34.101.151.150?source=`;
+export const nhentaiCrawler = `https://asia-east2-fleet-range-273715.cloudfunctions.net/nhentai-crawler-v2?nhentai_id=`;
+export const nhentaiByPass = `https://asia-east2-nhentai-unofficial-web.cloudfunctions.net/nhentaiByPass?source=`;
