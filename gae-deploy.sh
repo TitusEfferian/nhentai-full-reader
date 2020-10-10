@@ -1,1 +1,0 @@
-git fetch && git rebase origin/gae-master && yarn build && gcloud app deploy
