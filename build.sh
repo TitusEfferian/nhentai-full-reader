@@ -1,1 +1,1 @@
-git fetch && git rebase origin/master && gcloud builds submit --tag gcr.io/nhentai-unofficial-web/nhentai-unoff-web
+gcloud builds submit --tag gcr.io/nhentai-unofficial-web/nhentai-unoff-web
