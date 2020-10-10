@@ -24,7 +24,7 @@ function App() {
           }
         });
       },
-      { root: null, rootMargin: "0px", threshold: 1.0 }
+      { root: null, rootMargin: "0px", threshold: 0.5 }
     )
   );
 
@@ -102,7 +102,6 @@ function App() {
             src={`${nhentaiByPass}${x.preview}`}
             loader={`${nhentaiByPass}${x.original}`}
             onLoad={() => {
-              // setPreviewImageOnLoad((prev) => [...prev, true]);
               IO.current.observe(document.getElementById(`nhentai-page-${y}`));
             }}
           />
